@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Zen Browser
+Exec=/home/xealom/.local/zen/zen %u
+Icon=/home/xealom/.local/zen/browser/chrome/icons/default/default128.png
+Type=Application
+Categories=Network;WebBrowser;
+MimeType=text/html;text/xml;application/xhtml+xml;x-scheme-handler/http;x-scheme-handler/https;
+StartupWMClass=zen

@@ -1,0 +1,25 @@
+# Secrets / State — nie committen
+configs/ai/pi-agent/auth.json
+configs/ai/pi-agent/sessions/
+configs/ai/opencode/node_modules/
+configs/ai/opencode/service.json
+configs/ai/opencode/package-lock.json
+*.bak-*
+*~
+.cache/
+result
+# Noctalia-Laufzeit (History/Counts/Caches)
+configs/desktop/noctalia/settings-live.toml.fresh-stub-bak
+**/notification_history.json
+**/usage_counts.json
+**/recently_used.json
+**/screen_time.json
+**/state.toml
+# MPD/Player-State
+**/mpd/database
+**/mpd/log
+**/mpd/pid
+**/mpd/state
+**/mpd/sticker.sql
+# Blender/Prism Caches & Spieldaten
+**/__pycache__/

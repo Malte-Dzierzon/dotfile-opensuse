@@ -1,0 +1,7 @@
+{
+  "theme": "noctalia",
+  "lastChangelogVersion": "0.75.4",
+  "packages": [
+    "npm:oh-my-pi"
+  ]
+}
