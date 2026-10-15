@@ -1,11 +1,16 @@
 # Fonts to install on openSUSE (names, not store paths)
 # zypper: jetbrains-mono-fonts, noto-sans-fonts, noto-serif-fonts, dejavu-fonts
 # + a Nerd Font (e.g. neuronalberta.../nerdfonts or manual JetBrainsMono Nerd Font)
-# + bundled display fonts were in old dotfiles/.local/share/fonts: spikes, maple, excaliflexend (re-add manually if wanted)
 JetBrains Mono (+ Nerd Font variant)
 Noto Sans / Serif (+ Symbols2, CJK as needed)
 DejaVu Sans / Serif / Mono
 DroidSansM Nerd Font
-Maple (bundled before, manual)
-Lexend (bundled before, manual)
-Spikes (bundled before, manual)
+
+# Bundled below (./maple/*.ttf, OFL) — Standard-Terminal-Font überall:
+Maple Mono (16 Schnitte)
+Install: mkdir -p ~/.local/share/fonts/maple &&
+  cp configs/desktop/fonts/maple/*.ttf ~/.local/share/fonts/maple/ &&
+  fc-cache -f ~/.local/share/fonts
+Check: fc-list | grep -i maple
+Fallback für Icons (Nerd-Font-Symbole) bleibt JetBrainsMono NFM (RPM/zypper).
+Lexend / Spikes waren früher gebündelt, aktuell nicht in Benutzung.

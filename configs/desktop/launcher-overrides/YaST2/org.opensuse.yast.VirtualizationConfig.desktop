@@ -1,0 +1,25 @@
+[Desktop Entry]
+Type=Application
+Categories=Settings;System;Qt;X-SuSE-YaST;X-SuSE-YaST-Virtualization;
+
+X-KDE-ModuleType=Library
+X-KDE-HasReadOnlyMode=true
+X-SuSE-YaST-Call=virtualization
+
+X-SuSE-YaST-Group=Virtualization
+X-SuSE-YaST-Argument=
+X-SuSE-YaST-RootOnly=true
+X-SuSE-YaST-Geometry=
+X-SuSE-YaST-SortKey=
+X-SuSE-YaST-AutoinstResource=
+X-SuSE-YaST-Keywords=vm,virtualization
+
+Icon=yast-vm-install
+Exec=yast-root virtualization
+
+Name=YaST Install VM
+GenericName=Install Hypervisor and Tools
+Comment=Install Xen or KVM with Management Tools
+X-KDE-SubstituteUID=true
+StartupNotify=true
+

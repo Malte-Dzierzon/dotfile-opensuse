@@ -1,26 +1,32 @@
 # App-Liste — alles Installierte, Stand 2026-10-15
 
 Quelle: live-System `xealom@linux`. Reinstall-Block zuerst, darunter Vollnachweis
-mit Versionen. Rohdumps: `apps/snapshot/` (`rpm-qa.txt` = alle 2918 rpm,
+mit Versionen. Rohdumps: `apps/snapshot/` (`rpm-qa.txt` = alle 2926 rpm,
 `zypper-versions.txt`, `upstream-versions.txt`, `flatpak-user.txt`, `npm-global.txt`,
 `desktop-entries-effective.txt`).
 
 ## 1. Reinstall (ein Block, zypper)
 
 ```bash
-sudo zypper install -y foot kitty alacritty fish starship tmux yazi lazygit btop fastfetch fzf eza zoxide neovim mpv zathura nautilus mpd rmpc kew wiremix cava steam gamemode mangohud docker tailscale nodejs24 blender inkscape krita godot grim slurp swaylock wlsunset brightnessctl playerctl xwayland-satellite imv chafa qalculate-qt file-roller dconf-editor evince git gh direnv ripgrep fd bat jq gdu unzip file wget psmisc gcc ffmpeg texlab qt5ct qt6ct nwg-look pipewire pipewire-pulseaudio wireplumber rtkit bluez power-profiles-daemon vulkan-tools greetd
+sudo zypper install -y foot ghostty fish starship tmux yazi lazygit btop fastfetch fzf eza zoxide neovim mpv zathura nautilus mpd rmpc kew wiremix cava steam gamemode mangohud docker tailscale nodejs24 blender inkscape krita godot grim slurp swaylock wlsunset brightnessctl playerctl xwayland-satellite libqt5-qtwayland imv chafa qalculate-qt file-roller dconf-editor evince git gh direnv ripgrep fd bat jq gdu unzip file wget psmisc gcc ffmpeg texlab qt5ct qt6ct nwg-look pipewire pipewire-pulseaudio wireplumber rtkit bluez power-profiles-daemon vulkan-tools greetd limine sdbootutil efibootmgr
 ```
 
 `nodejs24` → `/usr/bin/node`. `neovim` → `nvim`. AMD-Vulkan via `libvulkan_radeon` + `vulkan-tools`.
 `opentabletdriver` separat (RPM `--nodeps`, siehe Abschnitt 3).
 
-## 2. Alle Zypper-Apps mit Version (66, alle verifiziert)
+## 2. Alle Zypper-Apps mit Version (77, alle verifiziert)
 
 | Paket | Version | Wozu |
 |---|---|---|
-| foot | 1.28.0 | Standard-Terminal |
-| kitty | 0.48.2 | Terminal extra |
-| alacritty | 0.17.0 | Terminal extra |
+| foot | 1.28.0 | Backup-Terminal |
+| ghostty | 1.3.1 | Standard-Terminal (Cursor-Warp, Noctalia-Theme) |
+| ghostty-bash-completion / ghostty-fish-completion / ghostty-zsh-completion | 1.3.1 | Shell-Completion |
+| ghostty-vim / ghostty-neovim | 1.3.1 | Editor-Integration |
+| nautilus-extension-ghostty / terminfo-ghostty | 1.3.1 | Kontextmenü / Terminfo |
+| limine | 12.9.3 | Bootloader-Menü (statt YaST-Auswahl, siehe `system/boot/limine/`) |
+| sdbootutil | 1+git20260929 | BLS-Einträge (füttern `update-limine`-Generator) |
+| efibootmgr | 18 | NVRAM-Eintrag Limine |
+| libqt5-qtwayland | 5.15.19 | Qt5-Wayland-Plugin (YaST-nativ unter Wayland) |
 | fish | 4.8.1 | Standard-Shell |
 | starship | 1.26.0 | Prompt |
 | tmux | 3.7b | Multiplexer |
@@ -71,7 +77,7 @@ sudo zypper install -y foot kitty alacritty fish starship tmux yazi lazygit btop
 | pipewire / wireplumber | 1.6.9 / 0.5.18 | Audio |
 | vulkan-tools / greetd | 1.4.363 / 0.10.3 | Vulkan-Test / Login-Manager |
 
-## 3. Upstream + Flatpak (10 + 2, nie Distro-Paket)
+## 3. Upstream + Flatpak (10 + 5, nie Distro-Paket)
 
 | App | Version | Weg | Ziel |
 |---|---|---|---|
@@ -87,6 +93,9 @@ sudo zypper install -y foot kitty alacritty fish starship tmux yazi lazygit btop
 | OpenTabletDriver | 0.6.7 | RPM `sudo rpm -i --nodeps` + user-dotnet 8.0.32 | `/usr/bin/otd*` |
 | Obsidian | 1.14.4 | `flatpak install --user flathub md.obsidian.Obsidian` | flatpak-user |
 | Prism Launcher | 11.1.1 | `flatpak install --user flathub org.prismlauncher.PrismLauncher` | flatpak-user |
+| Sonora | 0.43.0 | `flatpak install --user flathub io.github.nolight132.sonora` | flatpak-user |
+| Equibop | 3.3.1 | `flatpak install --user flathub org.equicord.equibop` | flatpak-user |
+| osu!lazer | 2026.1005.0 | `flatpak install --user flathub sh.ppy.osu` | flatpak-user |
 
 Build-Befehle: `AGENTS.md`.
 
@@ -94,12 +103,34 @@ Build-Befehle: `AGENTS.md`.
 
 `apps/snapshot/desktop-entries-effective.txt`. Versteckt per
 `configs/desktop/launcher-overrides/` + `update-desktop-database`: Foot-Client/Server,
-Noctalia-Daemon, YaST-Software/1-Click, Konsole, Parental-Controls, Tweaks/Extensions,
+Noctalia-Daemon, YaST-1-Click, Konsole, Parental-Controls, Tweaks/Extensions,
 ColorProfileViewer, Evince (→ Zathura-Standard), KDE-CrashHandler, Super-User-Terminal.
+(YaST-Software ist bewusst sichtbar: passwortfreier Starter, kein NoDisplay.)
 
 ## 5. Nicht installieren
 
-Aus Repo gelöscht: ghostty, cliamp, sonora, toofan, slipper, rofi, osu-ini,
+Aus Repo gelöscht: cliamp, sonora, toofan, slipper, rofi, osu-ini,
 headset-Regel, zsh-Backup, Nix-Referenzskripte, alte Duplikate.
-Nie installiert gewesen: bw, lms, headsetcontrol, lazydocker, osu, LMStudio,
+Nie installiert gewesen: bw, lms, headsetcontrol, lazydocker, LMStudio,
 Flare, Concord, Readest, Serein.
+
+> Stand 2026-10-15: `sonora`/`equibop`/`osu!lazer` sind als User-Flatpaks
+> installiert und werden mitinstalliert (Abschnitt 3). Nur deren Configs
+> bleiben unversioniert.
+
+## 6. Fonts + Ghostty-Cursor-Shader (user-space, kein zypper)
+
+- Maple Mono (Terminal-Font überall, Fallback JetBrainsMono NFM für Icons):
+  vendored in `configs/desktop/fonts/maple/` (16 TTF, OFL) →
+  `~/.local/share/fonts/maple/` + `fc-cache -f ~/.local/share/fonts`.
+  Check: `fc-list | grep -i maple`. Details: `configs/desktop/fonts/installed-fonts.txt`.
+- Cursor-Warp-Shader:
+  `git clone --depth 1 https://github.com/sahaj-b/ghostty-cursor-shaders ~/.config/ghostty/shaders`,
+  aktiv via `custom-shader = ".../shaders/ghostty/cursor_warp.glsl"` in
+  `configs/shell/ghostty/config` (+ `custom-shader-animation = always`).
+- Ghostty-Noctalia-Theme: Noctalia-Template `ghostty` muss in
+  `settings.toml` unter `theme.templates.builtin_ids` stehen, dann
+  `noctalia msg templates-apply` (schreibt `~/.config/ghostty/themes/noctalia`).
+- Terminal-Rolle: `default-app --set terminal ghostty`
+  (`~/.config/default-app/roles.toml`); `default-app` übersetzt Foot-Flags
+  (`-a` → `--class=`, `-T` → `--title=`) und setzt `-e` für Ghostty.

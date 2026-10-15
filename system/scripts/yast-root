@@ -1,0 +1,36 @@
+#!/bin/sh
+# Passwordless YaST starter (Wayland/Umbriel).
+# Requires in /etc/sudoers.d:
+#   xealom ALL=(root) NOPASSWD: SETENV: /sbin/yast2, /usr/sbin/yast2
+# (SETENV lets sudo pass VAR=value assignments like WAYLAND_DISPLAY through.)
+# Forwards the Wayland session into root's env (gnomesu/xdg-su drop it).
+# sudo -n fails fast without prompting if the rule is missing.
+LOG=/tmp/yast-root.err
+WD="${WAYLAND_DISPLAY:-wayland-0}"
+RD="${XDG_RUNTIME_DIR:-/run/user/$(id -u)}"
+if [ -n "$DBUS_SESSION_BUS_ADDRESS" ]; then
+    sudo -n \
+        "WAYLAND_DISPLAY=$WD" \
+        "XDG_RUNTIME_DIR=$RD" \
+        "DISPLAY=${DISPLAY:-:0}" \
+        QT_QPA_PLATFORM=wayland \
+        QT_QPA_PLATFORMTHEME=qt5ct \
+        "DBUS_SESSION_BUS_ADDRESS=$DBUS_SESSION_BUS_ADDRESS" \
+        /sbin/yast2 "$@" 2>>"$LOG"
+else
+    sudo -n \
+        "WAYLAND_DISPLAY=$WD" \
+        "XDG_RUNTIME_DIR=$RD" \
+        "DISPLAY=${DISPLAY:-:0}" \
+        QT_QPA_PLATFORM=wayland \
+        QT_QPA_PLATFORMTHEME=qt5ct \
+        /sbin/yast2 "$@" 2>>"$LOG"
+fi
+rc=$?
+if [ "$rc" -ne 0 ]; then
+    echo "$(date '+%F %T') yast-root $* -> sudo exit $rc" >>"$LOG"
+    if command -v zenity >/dev/null 2>&1 && { [ -n "$DISPLAY" ] || [ -n "$WAYLAND_DISPLAY" ]; }; then
+        zenity --error --text "YaST Start fehlgeschlagen (sudo exit $rc). Siehe /tmp/yast-root.err" 2>/dev/null &
+    fi
+fi
+exit "$rc"

@@ -1,5 +1,5 @@
-# system-backup: restored by copying this file to ~/.config/default-app-roles.toml
-# or point $DEFAULT_APP_CONF at it. Roles: terminal editor browser file pdf notes.
+# xealom dotfiles: copy this file to ~/.config/default-app/roles.toml
+# (or point $DEFAULT_APP_CONF at it). Roles: terminal editor browser file pdf notes.
 # defaults — the six preferred apps. Change with:
 #   default-app --set <role> <binary>   (validates + writes safely)
 #   default-app --list                  (show all roles)
@@ -11,7 +11,7 @@
 # dotfiles/.config/mimeapps.list and are intentionally separate —
 # run `dot mime` to check both stay in sync.
 [roles]
-terminal = "foot"
+terminal = "ghostty"
 editor = "zeditor"
 browser = "zen"
 file = "nautilus"

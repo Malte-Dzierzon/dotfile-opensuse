@@ -1,16 +1,15 @@
+TAMASHIKA.desktop :: TAMASHIKA
 blender-5.2.desktop :: Blender 5.2
 btop.desktop :: btop++
 ca.desrt.dconf-editor.desktop :: dconf Editor
+com.mitchellh.ghostty.desktop :: Ghostty
 foot.desktop :: Foot
 io.github.Qalculate.qalculate-qt.desktop :: Qalculate! (Qt)
 kew.desktop :: kew
-kitty.desktop :: kitty
 mpv.desktop :: mpv Media Player
 nvim.desktop :: Neovim
 nwg-look.desktop :: GTK Settings
 opentabletdriver.desktop :: OpenTabletDriver
-org.alacritty.Alacritty.desktop :: Alacritty
-org.gnome.baobab.desktop :: Disk Usage Analyzer
 org.gnome.DiskUtility.desktop :: Disks
 org.gnome.FileRoller.desktop :: File Roller
 org.gnome.Nautilus.desktop :: Files
@@ -19,6 +18,7 @@ org.gnome.Settings.desktop :: Settings
 org.gnome.SimpleScan.desktop :: Document Scanner
 org.gnome.Snapshot.desktop :: Camera
 org.gnome.SystemMonitor.desktop :: System Monitor
+org.gnome.baobab.desktop :: Disk Usage Analyzer
 org.godotengine.Godot.desktop :: Godot Engine
 org.inkscape.Inkscape.desktop :: Inkscape
 org.kde.krita.desktop :: Krita

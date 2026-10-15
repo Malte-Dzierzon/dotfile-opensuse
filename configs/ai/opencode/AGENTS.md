@@ -7,7 +7,7 @@
 
 This repository is a personal configuration archive, NOT an OS installer.
 Before changing anything, read in the repo root: `AGENTS.md`, then
-`apps/app-inventory.md`, `migration/opensuse.md`, `migration/inventory.md`.
+`apps/app-inventory.md`, `docs/fresh-install.md`, `docs/coverage.md`.
 
 ## Working rules on openSUSE Tumbleweed
 

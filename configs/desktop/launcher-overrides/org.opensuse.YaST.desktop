@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Categories=Settings;System;X-SuSE-Core-System;X-SuSE-ControlCenter-System;X-GNOME-SystemSettings;
+Name=YaST
+Icon=yast-control-center
+GenericName=Administrator Settings
+Exec=yast-root
+Encoding=UTF-8
+Comment=Manage system-wide settings
+

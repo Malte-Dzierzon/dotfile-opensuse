@@ -1,0 +1,43 @@
+# Ghostty — Foot-Look (Maple Mono, Beam-Cursor, 0.9 Opacity) + Cursor-Warp
+# Palette kommt von Noctalia (theme = noctalia, siehe Noctalia-Template).
+
+# Noctalia-managed palette
+theme = noctalia
+
+# Font (wie Foot: Maple Mono primär, JetBrainsMono NFM als Fallback)
+font-family = "Maple Mono"
+font-family = "JetBrainsMono NFM"
+font-size = 14
+
+# Fenster (wie Foot: pad 10x10, alpha 0.9)
+window-padding-x = 10
+window-padding-y = 10
+background-opacity = 0.9
+
+# Scrollback (wie Foot)
+scrollback-limit = 10000
+
+# Cursor (Block, blinkend)
+cursor-style = "block"
+cursor-style-blink = true
+
+# Cursor-Warp: Kittys Trail-Physik als Shader (Cursor wandert sichtbar mit)
+custom-shader = "/home/xealom/.config/ghostty/shaders/ghostty/cursor_trail_kitty_physics.glsl"
+# "always", damit die Animation auch bei Fokuswechsel (Block-Hohlcursor) nicht einfriert
+custom-shader-animation = always
+
+# Verhalten
+confirm-close-surface = false
+resize-overlay = never
+
+# Zwischenablage
+keybind = shift+insert=paste_from_clipboard
+keybind = control+insert=copy_to_clipboard
+# Shift+Enter als CSI-u, damit TUIs es von Enter unterscheiden können
+keybind = shift+enter=csi:13;2u
+# Alt+Shift+Enter dito (sonst wie Alt+Enter kodiert; wichtig für tmux)
+keybind = alt+shift+enter=csi:13;4u
+keybind = super+control+shift+alt+arrow_down=resize_split:down,100
+keybind = super+control+shift+alt+arrow_up=resize_split:up,100
+keybind = super+control+shift+alt+arrow_left=resize_split:left,100
+keybind = super+control+shift+alt+arrow_right=resize_split:right,100

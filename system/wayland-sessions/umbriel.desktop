@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Umbriel
+Comment=Umbriel Wayland Compositor
+Exec=/home/xealom/.local/bin/start-umbriel
+Type=Application
+DesktopNames=Umbriel

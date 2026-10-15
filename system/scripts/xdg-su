@@ -1,0 +1,71 @@
+#!/bin/sh
+# Shim for /usr/bin/xdg-su on Umbriel/Wayland.
+#
+# Problem: xdg-su -> gnomesu only forwards X11 (DISPLAY/XAUTHORITY) and drops
+# WAYLAND_DISPLAY/XDG_RUNTIME_DIR. YaST (Qt5) started as root then has no
+# display and exits silently (xdg-su discards its output).
+#
+# Fix: embed the current Wayland session variables as literals INTO the
+# `-c` command string. gnomesu runs that string in root's shell, so the
+# values survive the su transition. Root can connect to /run/user/$UID
+# sockets (bypasses the 0700 dir perms), verified with:
+#   su -c 'WAYLAND_DISPLAY=wayland-0 XDG_RUNTIME_DIR=/run/user/1000 ... yast2'
+#
+# Debug: XDG_SU_SHIM_DEBUG=1 prints the rewritten argv instead of exec'ing
+# (lets you verify without a root password prompt).
+
+REAL_XDG_SU="/usr/bin/xdg-su"
+
+# Passthrough when no command is given (--help/--manual/--version/errors):
+# just let the real xdg-su handle argument parsing.
+has_cmd=0
+for a in "$@"; do
+    [ "$a" = "-c" ] && has_cmd=1
+done
+if [ "$has_cmd" != "1" ]; then
+    if [ -n "$XDG_SU_SHIM_DEBUG" ]; then
+        echo "shim passthrough: $REAL_XDG_SU $*" >&2
+    fi
+    exec "$REAL_XDG_SU" "$@"
+fi
+
+# Parse -u user / -c command (mirrors xdg-su's own syntax).
+user=""
+cmd=""
+while [ $# -gt 0 ]; do
+    case "$1" in
+        -u) user="$2"; shift 2;;
+        -c) cmd="$2"; shift 2;;
+        *) shift;;  # --help etc. alongside -c: leave to real xdg-su
+    esac
+done
+
+# Only inject for root (default) — another user's session could not use
+# our Wayland socket anyway.
+if [ -z "$user" ] || [ "$user" = "root" ]; then
+    wd="${WAYLAND_DISPLAY:-wayland-0}"
+    rd="${XDG_RUNTIME_DIR:-/run/user/$(id -u)}"
+    disp="${DISPLAY:-:0}"
+    # Single-quote values defensively (strips embedded single quotes).
+    q() { printf "'%s'" "$(printf '%s' "$1" | sed "s/'//g")"; }
+    prefix="WAYLAND_DISPLAY=$(q "$wd") XDG_RUNTIME_DIR=$(q "$rd") DISPLAY=$(q "$disp") QT_QPA_PLATFORM=wayland"
+    if [ -n "$DBUS_SESSION_BUS_ADDRESS" ]; then
+        prefix="$prefix DBUS_SESSION_BUS_ADDRESS=$(q "$DBUS_SESSION_BUS_ADDRESS")"
+    fi
+    cmd="$prefix $cmd"
+fi
+
+if [ -n "$XDG_SU_SHIM_DEBUG" ]; then
+    if [ -z "$user" ]; then
+        echo "$REAL_XDG_SU -c $cmd"
+    else
+        echo "$REAL_XDG_SU -u $user -c $cmd"
+    fi
+    exit 0
+fi
+
+if [ -z "$user" ]; then
+    exec "$REAL_XDG_SU" -c "$cmd"
+else
+    exec "$REAL_XDG_SU" -u "$user" -c "$cmd"
+fi

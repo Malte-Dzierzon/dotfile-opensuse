@@ -2,7 +2,7 @@
 # bootstrap-opencode.sh — install stable OpenCode CLI + merge migration AGENTS.md.
 # Scope: OpenCode only. No system packages, no desktop, no drivers, no credentials.
 # Official install: curl -fsSL https://opencode.ai/install | bash (no sudo needed).
-# Usage: ./migration/bootstrap-opencode.sh [--help] [--dry-run]
+# Usage: ./docs/bootstrap-opencode.sh [--help] [--dry-run]
 set -euo pipefail
 
 SELF="$(readlink -f "$0")"

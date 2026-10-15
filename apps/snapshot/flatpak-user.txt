@@ -1,2 +1,5 @@
+io.github.nolight132.sonora	0.43.0	stable
 md.obsidian.Obsidian	1.14.4	stable
+org.equicord.equibop	3.3.1	stable
 org.prismlauncher.PrismLauncher	11.1.1	stable
+sh.ppy.osu	2026.1005.0-lazer	stable

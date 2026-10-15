@@ -1,0 +1,1 @@
+xealom ALL=(root) NOPASSWD: SETENV: /sbin/yast2, /usr/sbin/yast2
