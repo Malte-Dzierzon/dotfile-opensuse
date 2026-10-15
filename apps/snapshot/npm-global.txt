@@ -1,0 +1,7 @@
+/home/xealom/.local/lib
+├── @mariozechner/pi-coding-agent@0.73.1
+└── oh-my-pi@0.2.0
+
+User packages:
+  npm:oh-my-pi
+    /home/xealom/.local/lib/node_modules/oh-my-pi

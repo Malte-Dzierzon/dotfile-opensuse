@@ -1,0 +1,42 @@
+blender-5.2.desktop :: Blender 5.2
+btop.desktop :: btop++
+ca.desrt.dconf-editor.desktop :: dconf Editor
+footclient.desktop :: Foot Client
+foot.desktop :: Foot
+foot-server.desktop :: Foot Server
+gnome-system-monitor-kde.desktop :: GNOME System Monitor
+io.github.Qalculate.qalculate-qt.desktop :: Qalculate! (Qt)
+kew.desktop :: kew
+kitty.desktop :: kitty
+konsolesu.desktop :: Terminal - Super User Mode
+mpv.desktop :: mpv Media Player
+nvim.desktop :: Neovim
+nwg-look.desktop :: GTK Settings
+opentabletdriver.desktop :: OpenTabletDriver
+org.alacritty.Alacritty.desktop :: Alacritty
+org.freedesktop.MalcontentControl.desktop :: Parental Controls
+org.gnome.baobab.desktop :: Disk Usage Analyzer
+org.gnome.ColorProfileViewer.desktop :: Color Profile Viewer
+org.gnome.DiskUtility.desktop :: Disks
+org.gnome.Evince.desktop :: Document Viewer
+org.gnome.Extensions.desktop :: Extensions
+org.gnome.FileRoller.desktop :: File Roller
+org.gnome.Nautilus.desktop :: Files
+org.gnome.Seahorse.desktop :: Passwords and Keys
+org.gnome.Settings.desktop :: Settings
+org.gnome.SimpleScan.desktop :: Document Scanner
+org.gnome.Snapshot.desktop :: Camera
+org.gnome.SystemMonitor.desktop :: System Monitor
+org.gnome.tweaks.desktop :: Tweaks
+org.godotengine.Godot.desktop :: Godot Engine
+org.inkscape.Inkscape.desktop :: Inkscape
+org.kde.drkonqi.coredump.gui.desktop :: Crashed Processes Viewer
+org.kde.konsole.desktop :: Konsole
+org.kde.krita.desktop :: Krita
+org.opensuse.YaST.desktop :: YaST
+org.opensuse.yast.Packager.desktop :: YaST Software
+org.pwmt.zathura.desktop :: Zathura
+qt5ct.desktop :: Qt5 Settings
+qt6ct.desktop :: Qt6 Settings
+steam.desktop :: Steam
+yazi.desktop :: Yazi File Manager

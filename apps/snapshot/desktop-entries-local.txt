@@ -1,0 +1,15 @@
+/home/xealom/.local/share/applications/dev.noctalia.Noctalia.desktop
+/home/xealom/.local/share/applications/dev.zed.Zed.desktop
+/home/xealom/.local/share/applications/footclient.desktop
+/home/xealom/.local/share/applications/foot-server.desktop
+/home/xealom/.local/share/applications/gnome-system-monitor-kde.desktop
+/home/xealom/.local/share/applications/konsolesu.desktop
+/home/xealom/.local/share/applications/org.freedesktop.MalcontentControl.desktop
+/home/xealom/.local/share/applications/org.gnome.ColorProfileViewer.desktop
+/home/xealom/.local/share/applications/org.gnome.Evince.desktop
+/home/xealom/.local/share/applications/org.gnome.Extensions.desktop
+/home/xealom/.local/share/applications/org.gnome.tweaks.desktop
+/home/xealom/.local/share/applications/org.kde.drkonqi.coredump.gui.desktop
+/home/xealom/.local/share/applications/org.kde.konsole.desktop
+/home/xealom/.local/share/applications/org.opensuse.yast.Packager.desktop
+/home/xealom/.local/share/applications/zen.desktop

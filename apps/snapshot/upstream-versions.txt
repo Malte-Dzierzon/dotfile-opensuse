@@ -1,0 +1,10 @@
+== upstream ==
+umbriel 0.1.0 (693b68996a83)
+noctalia v5.2.1 (v5.2.1-143-g4e21d7d9309a)
+2.17.2
+0.73.1
+opencode v2.0.26
+Mozilla Zen 1.23.2b
+== otd ==
+opentabletdriver-0.6.7-1.x86_64
+greetd-0.10.3-2.6.x86_64
