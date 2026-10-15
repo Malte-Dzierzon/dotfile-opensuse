@@ -23,7 +23,7 @@ Agents: pi 0.73.1 + OMP 0.2.0 + opencode v2.0.26 (nur Upstream, nie Distro-Paket
 - `configs/desktop/launcher-overrides/*.desktop` → `~/.local/share/applications/`,
   danach `update-desktop-database ~/.local/share/applications` (versteckt Foot-Duplikate,
   Noctalia, YaST-Extras u.a. — sauberer Launcher)
-- `configs/desktop/walker+mpd+kew+rmpc+swaylock+rofi` → `~/.config/<gleich>`
+- `configs/desktop/walker+mpd+kew+rmpc+swaylock` → `~/.config/<gleich>`
 - `configs/shell/fish/` → `~/.config/fish/` (inkl. `conf.d/xealom-commands.fish`: 11 Wartungsfunktionen);
   `starship/starship.toml` → `~/.config/starship.toml`;
   `foot+kitty+alacritty+tmux+btop+cava+fastfetch` → `~/.config/<gleich>`
@@ -56,8 +56,8 @@ Agents: pi 0.73.1 + OMP 0.2.0 + opencode v2.0.26 (nur Upstream, nie Distro-Paket
    - `umbriel.service`-Units nach `~/.config/systemd/user/` symlinken; Greeter-Config via
      `/usr/local/bin/noctalia-greeter-print-greetd-config` nach `/etc/greetd/config.toml`
 4. Configs per Karte kopieren, Launcher-Overrides + `update-desktop-database` nicht vergessen.
-5. Nur was in `apps/app-inventory.md` unter „installiert“ steht. `ghostty/cliamp/sonora/toofan/slipper/rofi`-Reste,
-   `bw/lms/headsetcontrol/lazydocker/osu/LMStudio` NICHT nachinstallieren.
+5. Nur was in `apps/app-inventory.md` unter „installiert“ steht. `ghostty/cliamp/sonora/toofan/slipper/rofi/osu`
+  sind aus dem Repo gelöscht — NICHT nachinstallieren.
 
 ## Maschine (anpassen, nie blind kopieren)
 

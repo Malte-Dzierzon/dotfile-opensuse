@@ -3,7 +3,7 @@
 ## Archiviert (live, getestet)
 
 Umbriel (alle TOML + shaders, live), Noctalia-Templates/Paletten/plugins.json + settings-live-Referenz,
-GTK3/4, qt5ct/qt6ct, mimeapps-live, Walker, mpd/kew/rmpc, swaylock, rofi-Ref, fish inkl.
+GTK3/4, qt5ct/qt6ct, mimeapps-live, Walker, mpd/kew/rmpc, swaylock, fish inkl.
 `conf.d/xealom-commands.fish` (11 Funktionen), starship, foot/kitty/alacritty, tmux, btop/cava/fastfetch,
 nvim LazyVim, zed, yazi, lazygit, omp, pi-agent (settings+themes, ohne auth/sessions), opencode-Ref,
 OTD-XP-Pen-Settings, Prism-cfg, Blender/Inkscape/Godot/Krita-Settings, `default-app` + `start-umbriel`,
@@ -24,5 +24,5 @@ Browser-Profile, Vaults, Realm-DBs, Flatpak-`~/.var`, Caches, Machine-IDs, Hardw
 ## App-Liste
 
 Alleinige Wahrheit: `apps/app-inventory.md` (installiert vs. nicht installiert, mit Quellen).
-NixOS-Katalog-Leichen (nil/alejandra/nh, ghostty-Binary, cliamp/sonora/toofan/slipper-Binaries,
+NixOS-Katalog-Leichen (nil/alejandra/nh, ghostty, cliamp/sonora/toofan/slipper/rofi, osu-ini,
 bw/lms/headsetcontrol/lazydocker/osu/Flare/Concord/Readest/Serein) werden NICHT mitinstalliert.

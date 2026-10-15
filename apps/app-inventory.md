@@ -40,7 +40,6 @@ Build-Rezepte für Umbriel/Noctalia/Greeter stehen in `AGENTS.md` (exakte Befehl
 
 ## Nicht installiert (nicht mitnehmen)
 
-ghostty (bewusst entfernt), cliamp/sonora/toofan/slipper (nur Config-Reste, kein Binary),
-rofi (durch Walker ersetzt), bw/lms/headsetcontrol/lazydocker/osu/LMStudio/Flare/Concord/Readest/Serein
-(nur alter NixOS-Katalog, auf diesem System nie installiert). Configs bleiben ggf. im Repo als
-Referenz, werden aber beim Neuaufbau NICHT installiert.
+ghostty/cliamp/sonora/toofan/slipper/rofi/osu-ini/headset-Regel/zsh-Backup/Nix-Referenzskripte
+sind aus dem Repo gelöscht. Ebenfalls gelöscht: alte `mimeapps.list`- und `opencode-package.json`-Duplikate.
+Nicht nachinstallieren: bw/lms/headsetcontrol/lazydocker/osu/LMStudio/Flare/Concord/Readest/Serein.
